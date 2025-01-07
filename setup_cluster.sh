@@ -5,9 +5,9 @@ create_slurm_user()
 	#useradd -m -c "SLURM workload manager" -d /var/lib/slurm -u $defid -g slurm -s /bin/bash slurm
 }
 
-install_pmix()
+install_slurm_deps()
 {
-	apt-get -y install libev-libevent-dev
+	apt-get -y install libev-libevent-dev libpam-dev libdbus-1-dev
 	wget https://download.open-mpi.org/release/hwloc/v2.11/hwloc-2.11.2.tar.gz
 	tar -xvf hwloc-2.11.2.tar.gz
 	cd hwloc-2.11.2
@@ -22,17 +22,18 @@ install_pmix()
 	make
 	make all install
 	ldconfig
-	read -p "pmix install done"	
+	read -p "Slurm dependencies done"	
 }
 
 install_mariadb()
 {
-
+	apt-get install mariadb-server libmariadb-dev
+ 	read -p "MariaDB done"
 }
 
 install_slurm()
 {
-	#apt-get install libpam-dev libmariadb-dev libdbus-1-dev
+	
 	#wget https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2
 	#tar -xvf slurm-24.11.0.tar.bz2
 	#cd slurm-24.11.0
