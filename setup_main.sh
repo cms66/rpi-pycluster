@@ -24,7 +24,7 @@ pimodel=$(cat /sys/firmware/devicetree/base/model)
 pimodelnum=$(echo $pimodel | cut -d " " -f 3)
 pirev=$(cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^1000//')
 osarch=$(getconf LONG_BIT)
-repo="rpi-pyhome"
+repo="rpi-pycluster"
 dirscr=$PWD # Directory of calling script
 
 show_menu mnuMainFull # Show main menu
