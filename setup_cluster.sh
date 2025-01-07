@@ -27,7 +27,7 @@ install_slurm_deps()
 
 install_mariadb()
 {
-	apt-get install mariadb-server
+	apt-get -y install mariadb-server
  	read -p "MariaDB done"
 }
 
