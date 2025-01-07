@@ -53,7 +53,7 @@ install_mariadb()
 
 	#chmod 600 /etc/slurm/slurmdbd.conf
 	#chown slurm: /etc/slurm/slurmdbd.conf
- 	cat > /etc/systemd/system/slurmdbd.service << EOF
+ 	sudo bash -c "cat > /etc/systemd/system/slurmdbd.service << EOF
 [Unit]
 Description=Slurm DBD accounting daemon
 After=network.target munge.service
@@ -69,7 +69,6 @@ PIDFile=/run/slurmdbd.pid
 [Install]
 WantedBy=multi-user.target
 EOF"
-
 	systemctl enable slurmdbd.service
  	systemctl start slurmdbd.service
  	read -p "MariaDB done"
