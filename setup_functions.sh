@@ -126,6 +126,23 @@ get_subnet_cidr()
 	printf "Device = $dev | localnet = $localnet\n"
 }
 
+update_firmware()
+{
+	if [[ $pimodelnum = "4" ]] || [ $pimodelnum = "5" ]; then # Model has firmware
+		printf "Model has firmware\n"
+		updfirm=$(sudo rpi-eeprom-update | grep BOOTLOADER | cut -d ":" -f 2 | tr -d '[:blank:]') # Check for updates
+		printf "Update status: $updfirm\n"
+ 		if ! [ $updfirm = "uptodate" ]; then # Update available - TODO - test when updates are available
+ 			printf "Update available\n"
+ 			rpi-eeprom-update -a
+    	 else
+     		printf "Firmware is up to date\n"
+     	fi
+	else
+		printf "No firmware\n"
+	fi
+}
+
 install_server()
 {
 	read -p "TODO check exports + firewall"
