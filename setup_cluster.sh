@@ -30,7 +30,7 @@ install_mariadb()
 	#apt-get -y install mariadb-server
  	# TODO setup user/rights
   	touch /var/log/slurmdbd.log
-   	chowwn slurm:slurm /var/log/slurmdbd.log
+   	chown slurm:slurm /var/log/slurmdbd.log
 	sudo bash -c "cat > /etc/slurm/slurmdbd.conf << EOF
 # Authentication info
 AuthType=auth/munge
