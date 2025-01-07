@@ -1,10 +1,9 @@
 # rpi-pycluster
-IoT cluster using slurm
+IoT cluster.
 ## Assumes
-- Node naming pinode-1 upwards
 - Image modified with SDM
 ### First boot
 - Login as created user and run 
 ```
-
+wget https://raw.githubusercontent.com/cms66/rpi-pycluster/main/base_setup.py; sudo python ./base_setup.py
 ```
