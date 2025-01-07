@@ -33,39 +33,34 @@ install_mariadb()
 
 install_slurm_local()
 {
-	create_slurm_user
- 	install_slurm_deps
-  	install_mariadb
-	wget https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2
-	tar -xvf slurm-24.11.0.tar.bz2
-	cd slurm-24.11.0
-	./configure --prefix=/usr/local --with-pmix=/usr/local --with-hwloc=/usr/local --enable-pam
-	make
-	make contrib
-	make all install
-	ldconfig
+	#create_slurm_user
+ 	#install_slurm_deps
+  	#install_mariadb
+	#wget https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2
+	#tar -xvf slurm-24.11.0.tar.bz2
+	#cd slurm-24.11.0
+	#./configure --prefix=/usr/local --with-pmix=/usr/local --with-hwloc=/usr/local --enable-pam
+	#make
+	#make contrib
+	#make all install
+	#ldconfig
 	#on headnode and compute nodes:
-	#mkdir /etc/slurm ? created during slurm build
-	#touch /etc/slurm/slurm.conf ? created during slurm build
-	#touch /var/log/slurm.log 
-	#touch /var/log/slurmd.log
-	#chown slurm:slurm /var/log/slurm*.log
-	
+	mkdir /etc/slurm
+	touch /etc/slurm/slurm.conf ? created during slurm build
+	touch /var/log/slurm.log 
+	touch /var/log/slurmd.log	
 	#on headnode:
-	#mkdir /var/spool/slurmctld 
-	#chown slurm:slurm /var/spool/slurmctld 
-	#chmod 755 /var/spool/slurmctld 
-	#touch /var/log/slurmctld.log
-	#chown slurm:slurm /var/log/slurmctld.log
-	#touch /var/log/slurm_jobacct.log
-	#chown slurm:slurm /var/log/slurm_jobacct.log
-	
+	mkdir /var/spool/slurmctld 
+	chown slurm:slurm /var/spool/slurmctld 
+	chmod 755 /var/spool/slurmctld 
+	touch /var/log/slurmctld.log
+	touch /var/log/slurm_jobacct.log
 	#on compute nodes:
-	#mkdir /var/spool/slurmd 
-	#chown slurm:slurm /var/spool/slurmd
-	#chmod 755 /var/spool/slurmd
-	
-	#ln -s /etc/slurm/slurm.conf /usr/local/etc/slurm.conf
+	mkdir /var/spool/slurmd 
+	chown slurm:slurm /var/spool/slurmd
+	chmod 755 /var/spool/slurmd
+ 	chown slurm:slurm /var/log/slurm*.log
+	ln -s /etc/slurm/slurm.conf /usr/local/etc/slurm.conf
 	
 	read -p "slurm install done"
 }
