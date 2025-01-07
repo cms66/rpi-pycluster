@@ -4,7 +4,7 @@ declare -a mnuMainFull=(
 "Setup - Main menu#"
 "Hardware#show_menu mnuHardwareFull"
 "NFS#show_menu mnuNFSFull"
-"OpenMPI#show_menu mnuOpenMPIFull"
+"Cluster#show_menu mnuClusterFull"
 "OpenCV#show_menu mnuOpenCVFull"
 "SDM#show_menu mnuSDMFull"
 "Update setup#git_pull_setup"
@@ -27,8 +27,9 @@ declare -a mnuNFSFull=(
 "Add NFS remote mount#add_nfs_remote"
 "Back#break 2"
 )
-declare -a mnuOpenMPIFull=(
-"Setup - OpenMPI menu#"
+declare -a mnuClusterFull=(
+"Setup - Cluster menu#"
+"Install - Slurm - Local#install_slurm_local"
 "Install - OpenMPI - Local#install_openmpi_local"
 "Install - OpenMPI - Server#install_server"
 "Install - OpenMPI - Client#install_openmpi_client"
