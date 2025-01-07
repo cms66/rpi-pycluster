@@ -147,3 +147,18 @@ install_server()
 {
 	read -p "TODO check exports + firewall"
 }
+
+create_user_ssh_keys()
+{
+	# Create keys for user
+	runuser -l  $usrname -c "ssh-keygen -t ecdsa -b 521 -f ~/.ssh/id_ecdsa -P \"\"" # Works including creates .ssh directory
+	echo "HostKey $usrpath/.ssh/id_ecdsa" >> /etc/ssh/sshd_config
+	service sshd restart # Works
+	systemctl is-active sshd
+ 	read -p "Server keys generated for $usrname, press enter to return to menu" input
+}
+
+copy_user_ssh_keys()
+{
+	read -p "TODO run ssh-copy-id $usrname@$remnode as $usrname"
+}
