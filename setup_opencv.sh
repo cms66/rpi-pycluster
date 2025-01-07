@@ -41,7 +41,7 @@ install_opencv_local()
 
 install_opencv_client()
 {
-    # TODO check share exists
+    # TODO check shares /usr/local and share1 exist
 	install_opencv_deps
  	ldconfig
     cp -r $usrpath/share1/setup/python3/cv2 $usrpath/.venv/lib/python3.11/site-packages/
