@@ -144,13 +144,13 @@ install_openmpi_local()
 	wget $downlink
 	tar -xzf openmpi*.tar.gz
 	cd openmpi-$instver
-	./configure --prefix=/usr/local --with-slurm=/usr/local
-	cores=$(nproc)
-	make -j$cores all
-	make install	
-	ldconfig	
-	cd $usrpath
-	rm -rf openmpi*
-	mpirun --version
+	./configure --prefix=/usr/local
+	#cores=$(nproc)
+	#make -j$cores all
+	#make install	
+	#ldconfig	
+	#cd $usrpath
+	#rm -rf openmpi*
+	#mpirun --version
 	read -p "OpenMPI $instver - Local install finished, press enter to return to menu" input
 }
