@@ -144,7 +144,7 @@ install_openmpi_local()
 	wget $downlink
 	tar -xzf openmpi*.tar.gz
 	cd openmpi-$instver
-	./configure --prefix=/usr/local --with-hwloc=/usr/local --with-pmix=/usr/local --with-slurm=/usr/local
+	./configure --prefix=/usr/local--with-slurm=/usr/local
 	#cores=$(nproc)
 	#make -j$cores all
 	#make install	
