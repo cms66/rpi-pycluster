@@ -187,3 +187,32 @@ burn_sdm_image()
 	done
  	read -p "Burn finished, press enter to contine"
 }
+
+explore_sdm_image()
+{
+	imgdir=${arrSDMconf[imgdirectory]}
+	# Select image
+ 	readarray -t arrImg < <(find $imgdir/current -type f | awk -F "/" '{print $NF}')
+  	printf "Images\n-----\n"
+	PS3="Select image: "
+	COLUMNS=1
+	select img in "${arrImg[@]}" "Quit"
+	do
+  		case $img in
+    		*.img)
+    			imgex=$imgdir/current/$img
+       			sdm --explore $imgex
+       			read -p "Explore complete"
+      			;;
+    		"Quit")
+      			echo "Quit selected"
+      			break
+      			;;
+    		*)
+      			echo "Invalid option"
+      			;;
+  		esac
+	done
+ 	read -p "Explore finished, press enter to contine"
+}
+
