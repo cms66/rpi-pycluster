@@ -50,10 +50,10 @@ setup_git()
 	repobranch = $repobranch\n" > /home/$usrname/.pisetup/custom.conf
 	chown -R $usrname:$usrname /home/$usrname/.pisetup
 	# Add bash alias for setup and test menu
-	echo "alias mysetup=\"sudo bash ~/.pisetup/$repo/setup_main.sh\"" >> /home/$usrname/.bashrc
-	echo "alias mytest=\"sudo bash ~/.pisetup/$repo/test_main.sh\"" >> /home/$usrname/.bashrc
-	echo "alias pysetup=\"sudo python ~/.pisetup/$repo/setup_main.py\"" >> /home/$usrname/.bashrc 	
-	echo "alias pytest=\"sudo python ~/.pisetup/$repo/test_main.py\"" >> /home/$usrname/.bashrc
+	echo "alias mbs=\"sudo bash ~/.pisetup/$repo/setup_main.sh\"" >> /home/$usrname/.bashrc
+	echo "alias mbt=\"sudo bash ~/.pisetup/$repo/test_main.sh\"" >> /home/$usrname/.bashrc
+	echo "alias mps=\"sudo python ~/.pisetup/$repo/setup_main.py\"" >> /home/$usrname/.bashrc 	
+	echo "alias mpt=\"sudo python ~/.pisetup/$repo/test_main.py\"" >> /home/$usrname/.bashrc
 }
 
 # - Create python Virtual Environment (with access to system level packages) and bash alias for activation
@@ -61,7 +61,7 @@ create_venv()
 {
 	printf "%s\n" "Creating python Virtual Environment"
 	python -m venv --system-site-packages /home/$usrname/.venv
-	echo "alias myvp=\"source ~/.venv/bin/activate\"" >> /home/$usrname/.bashrc
+	echo "alias mvp=\"source ~/.venv/bin/activate\"" >> /home/$usrname/.bashrc
 	echo "alias dvp=\"deactivate\"" >> /home/$usrname/.bashrc
 	chown -R $usrname:$usrname /home/$usrname/.venv
 }
