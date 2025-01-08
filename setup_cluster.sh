@@ -108,3 +108,18 @@ install_slurm_local()
 	
 	read -p "slurm install done"
 }
+
+install_slurm_client()
+{
+ 	apt-get -y install libev-libevent-dev libpam-dev libdbus-1-dev libmariadb-dev
+  	ldconfig
+ 	mkdir /etc/slurm
+  	
+}
+
+setup_munge_key()
+{
+	# Head node
+	cp /etc/munge
+ 	# Compute node
+}
