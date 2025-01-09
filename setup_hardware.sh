@@ -22,5 +22,5 @@ setup_sense_hat()
 	make install
 	cd /home/$usrname
 	rm -rf RTIMULib*
- 	read -p Sense-hat setup complete, press enter to continue"
+ 	read -p "Sense-hat setup complete, press enter to continue"
 }
