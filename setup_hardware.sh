@@ -14,6 +14,7 @@ setup_sense_hat()
 {
 	apt-get -y install sense-hat
 	sed -i 's/#dtparam=i2c_arm=on/dtparam=i2c_arm=on/g' /boot/firmware/config.txt
+ 	echo "i2c-dev" >> /etc/modules
  	# Install cli calibration
 	wget -O RTIMULib.zip https://github.com/RPi-Distro/RTIMULib/archive/master.zip
 	unzip RTIMULib.zip
