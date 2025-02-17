@@ -1,4 +1,4 @@
-t# Hardware setup functions
+# Hardware setup functions
 
 setup_camera_csi()
 {
@@ -12,7 +12,7 @@ setup_camera_usb()
 
 setup_i2c()
 {
-	apt-get install i2c-tools python3-smbus
+	apt-get install i2c-tools python3-smbus gpiod
 	sed -i 's/#dtparam=i2c_arm=on/dtparam=i2c_arm=on/g' /boot/firmware/config.txt
  	echo "i2c-dev" >> /etc/modules
 }
