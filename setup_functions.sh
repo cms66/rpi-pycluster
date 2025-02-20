@@ -81,7 +81,7 @@ git_pull_setup()
 update_system()
 {
 	apt-get -y update
-	apt-get -y upgrade
+	apt-get -y full-upgrade
  	update_firmware
 	read -p "Finished System update, press enter to return to menu"
 }
