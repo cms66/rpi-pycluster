@@ -12,9 +12,10 @@ init_sdm()
 
 install_sdm_local()
 {
-    # Default setup - install to /usr/local/sdm
-    # TODO - select install location
-    #instdir="/usr/local/sdm" # Default installation directory (target for custom.conf)
+    	# Default setup - install to /usr/local/sdm
+    	# TODO - select install location
+    	#instdir="/usr/local/sdm" # Default installation directory (target for custom.conf)
+    	apt-get -y install rpiboot # For eMMC drives on Compute Modules
 	curl -L https://raw.githubusercontent.com/gitbls/sdm/master/EZsdmInstaller | bash
   	# Create directories for images
    	defdir="$usrpath/share$pinum/sdm/images"
