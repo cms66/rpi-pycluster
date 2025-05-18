@@ -28,6 +28,8 @@ update_system_base()
   	rm -rf /usr/local/sdm
  	rm -rf /usr/local/bin/sdm
   	rm -rf /etc/sdm
+   	echo "alias spo=\"sudo poweroff\"" >> /home/$usrname/.bashrc
+	echo "alias spr=\"sudo reboot\"" >> /home/$usrname/.bashrc
   	printf "%s\n" "System update complete"
 }
 
