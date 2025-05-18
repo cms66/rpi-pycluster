@@ -19,6 +19,7 @@ declare -a mnuHardwareFull=(
 "Camera - USB#setup_camera_usb"
 "Sense Hat#setup_sense_hat"
 "I2C#setup_i2c"
+"GPS#setup_gps"
 "Back#break 2"
 )
 declare -a mnuNFSFull=(
