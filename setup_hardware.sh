@@ -24,6 +24,8 @@ setup_i2c()
 
 setup_gps()
 {
+	# TODO git clone https://github.com/pimoroni/pa1010d-python + install not working
+ 	# Temp fix - Install to venv + copy to sys
 	read -p "Function not yet available, press enter to continue"
 }
 
