@@ -3,6 +3,10 @@
 setup_camera_csi()
 {
 	apt-get -y install python3-picamera2 --no-install-recommends
+ 	# TODO
+  	# Check RPi model (Pi5/CM5 dual camera)
+   	# Get Camera model
+   	# Modify /boot/firmware/config.txt
 	read -p "Camera setup done, press enter to continue"
 }
 
@@ -13,7 +17,7 @@ setup_camera_usb()
 
 setup_i2c()
 {
-	apt-get install i2c-tools python3-smbus gpiod
+	# apt-get install i2c-tools python3-smbus gpiod
 	sed -i 's/#dtparam=i2c_arm=on/dtparam=i2c_arm=on/g' /boot/firmware/config.txt
  	echo "i2c-dev" >> /etc/modules
 }
