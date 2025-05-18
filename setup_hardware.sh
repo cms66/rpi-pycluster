@@ -25,7 +25,9 @@ setup_i2c()
 setup_gps()
 {
 	# TODO git clone https://github.com/pimoroni/pa1010d-python + install not working
- 	# Temp fix - Install to venv + copy to sys
+ 	# Temp fix - Install to venv as user - installs pynmea2
+  	# cp -r .venv/lib/python3.11/site-packages/pynmea2 /lib/python3.11/
+   	# 
 	read -p "Function not yet available, press enter to continue"
 }
 
