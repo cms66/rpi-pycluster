@@ -2,7 +2,8 @@
 
 setup_camera_csi()
 {
-	read -p "Function not yet available, press enter to continue"
+	apt-get -y install python3-picamera2 --no-install-recommends
+	read -p "Camera setup done, press enter to continue"
 }
 
 setup_camera_usb()
