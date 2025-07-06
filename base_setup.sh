@@ -30,6 +30,7 @@ update_system_base()
   	rm -rf /etc/sdm
    	echo "alias spo=\"sudo poweroff\"" >> /home/$usrname/.bashrc
 	echo "alias spr=\"sudo reboot\"" >> /home/$usrname/.bashrc
+ 	echo "alias lsb=\"sudo udevadm trigger; lsblk\"" >> /home/$usrname/.bashrc
   	printf "%s\n" "System update complete"
 }
 
