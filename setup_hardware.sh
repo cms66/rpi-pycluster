@@ -1,5 +1,12 @@
 # Hardware setup functions
 
+setup_pcie()
+{
+	# Enable
+ 	echo "dtparam=pciex1" >> /boot/firmware/config.txt
+	echo "dtparam=pciex1_gen=3" >> /boot/firmware/config.txt
+}
+
 setup_camera_csi()
 {
 	apt-get -y install python3-picamera2 --no-install-recommends
@@ -7,6 +14,10 @@ setup_camera_csi()
   	# Check RPi model (Pi5/CM5 dual camera)
    	# Get Camera model
    	# Modify /boot/firmware/config.txt
+    	echo "dtoverlay=imx219,cam0" >> /boot/firmware/config.txt
+    	# Fix non-sudo access
+    	echo "SUBSYSTEM==\"dma_heap\", GROUP=\"video\", MODE=\"0660\"" >> /etc/udev/rules.d/raspberrypi.rules
+     	udevadm control --reload-rules && udevadm trigger
 	read -p "Camera setup done, press enter to continue"
 }
 
@@ -29,6 +40,11 @@ setup_gps()
   	# cp -r .venv/lib/python3.11/site-packages/pynmea2 /lib/python3.11/
    	# 
 	read -p "Function not yet available, press enter to continue"
+}
+
+setup_hailo()
+{
+	apt-get install hailo-all
 }
 
 setup_sense_hat()
