@@ -17,9 +17,10 @@ declare -a mnuHardwareFull=(
 "Setup - Hardware menu#"
 "Camera - CSI#setup_camera_csi"
 "Camera - USB#setup_camera_usb"
-"Sense Hat#setup_sense_hat"
 "I2C#setup_i2c"
 "GPS#setup_gps"
+"PCIe#setup_pcie"
+"Hailo-8#setup_hailo"
 "Back#break 2"
 )
 declare -a mnuNFSFull=(
