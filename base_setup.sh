@@ -23,7 +23,7 @@ update_system_base()
 	printf "%s\n" "Updating system"
 	apt-get -y update
 	apt-get -y full-upgrade
-	apt-get -y install python3-dev gcc g++ gfortran libraspberrypi-dev libomp-dev git-core build-essential cmake pkg-config make screen htop stress-ng zip bzip2 fail2ban ufw ntpdate pkgconf openssl libmunge-dev munge python3-setuptools libgpiod-dev smartmontools
+	apt-get -y install python3-dev gcc g++ gfortran libraspberrypi-dev libomp-dev git-core build-essential cmake pkg-config make screen htop stress-ng zip bzip2 fail2ban ufw ntpdate pkgconf openssl libmunge-dev munge python3-setuptools libgpiod-dev mmc-utils smartmontools
  	# Remove local SDM
   	rm -rf /usr/local/sdm
  	rm -rf /usr/local/bin/sdm
